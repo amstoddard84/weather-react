@@ -1,0 +1,15 @@
+.Footer .footer {
+  display: block;
+  max-width: 2000px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.Footer #signature {
+  display: block;
+  position: relative;
+  font-family: monospace;
+  font-size: 16px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
