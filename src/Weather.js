@@ -74,7 +74,18 @@ export default function Weather() {
       <div className="container">
         <div className="row">
           <div className="col-2">
-            <h4 className="forecast-time">3PM</h4>
+            <h4 className="forecast-time">10:00 AM</h4>
+            <ReactAnimatedWeather
+              className="forecast-icon"
+              icon="PARTLY_CLOUDY_DAY"
+              color="gray"
+              size={75}
+              animate={true}
+            />
+            <span className="temp">65°F </span>
+          </div>
+          <div className="col-2">
+            <h4 className="forecast-time">11:00 AM</h4>
             <ReactAnimatedWeather
               className="forecast-icon"
               icon="WIND"
@@ -82,8 +93,48 @@ export default function Weather() {
               size={75}
               animate={true}
             />
-
-            <span className="temp">65 / 54</span>
+            <span className="temp">64°F</span>
+          </div>
+          <div className="col-2">
+            <h4 className="forecast-time">12:00 PM</h4>
+            <ReactAnimatedWeather
+              className="forecast-icon"
+              icon="WIND"
+              color="blue"
+              size={75}
+              animate={true}
+            />
+            <span className="temp">63°F</span>
+          </div>
+          <div className="col-2">
+            <h4 className="forecast-time">
+              1:00
+              <br />
+              PM
+            </h4>
+            <ReactAnimatedWeather
+              className="forecast-icon"
+              icon="PARTLY_CLOUDY_DAY"
+              color="gray"
+              size={75}
+              animate={true}
+            />
+            <span className="temp">64°F</span>
+          </div>
+          <div className="col-2">
+            <h4 className="forecast-time">
+              2:00
+              <br />
+              PM
+            </h4>
+            <ReactAnimatedWeather
+              className="forecast-icon"
+              icon="CLEAR_DAY"
+              color="yellow"
+              size={75}
+              animate={true}
+            />
+            <span className="temp">67°F</span>
           </div>
         </div>
       </div>

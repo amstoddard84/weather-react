@@ -8,7 +8,7 @@ export default function Weather() {
         <a href="https://github.com/amstoddard84/She-Codes-Weather-App">
           Open Source Code
         </a>
-        by Anne Marie Robson
+        &#160; by Anne Marie Robson
       </p>
     </container>
   );
