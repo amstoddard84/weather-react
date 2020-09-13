@@ -39,7 +39,7 @@
   font-style: italic;
 }
 
-.Weather .icon {
+.WeatherInfo.info-icon {
   display: inline;
   position: relative;
   top: -150px;
