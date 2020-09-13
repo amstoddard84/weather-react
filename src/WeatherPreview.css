@@ -1,0 +1,18 @@
+.Weather .forecast-time {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.Weather .temp {
+  display: block;
+  font-size: 14px;
+  color: #52575d;
+  font-weight: bold;
+}
+
+.Weather .forecast-icon {
+  display: block;
+  padding: 0;
+}
