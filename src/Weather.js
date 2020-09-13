@@ -1,143 +1,69 @@
-import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
+import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
-  let weatherData = {
-    city: "Atlanta",
-    temperature: 86,
-    date: "Thursday 9/10/20",
-    time: "9:00AM ET",
-    description: "Cloudy",
-    humidity: 80,
-    wind: 7,
-    precipitation: 15,
-    imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-  };
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-  return (
-    <div className="Weather">
-      <form className="search-form">
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+   const apiKey = "eaba586c718e9928d025519220f8eb35";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+      <form onSubmit={handleSubmit}
+      className="search-form">
         <input
           type="search"
           className="form-control"
           placeholder="Please Enter a City..."
           autofocus="on"
-          autocomplete="off"
+          onChange={handleCityChange}
         />
-        <input type="submit" className="form-button" value="Get Forecast" />
+          <input
+          type="submit" 
+          className="form-button" 
+          value="Get Forecast" />
       </form>
-      <button type="button" className="button">
+      </div>
+      <button 
+      type="button" 
+      className="button">
         Current Location
       </button>
-      <h1>{weatherData.city}</h1>
-      <span className="subheader">
-        <small>
-          <span className="subheader">{weatherData.date}</span>
-          <span className="subheader">{weatherData.time}</span>
-        </small>
-        <span className="subheader" id="description">
-          {weatherData.description}
-        </span>
-      </span>
-      <div className="icon">
-        <ReactAnimatedWeather
-          icon="PARTLY_CLOUDY_NIGHT"
-          color="dark gray"
-          size={100}
-          animate={true}
-        />
-      </div>
-      <h2>
-        <span className="current-temp">{weatherData.temperature}</span>
-        <span className="temp-units">
-          <a href="/" className="far-temp">
-            °F
-          </a>
-          <span className="pipe">|</span>
-          <span className="temp-units">
-            <a href="/" className="cels-temp">
-              °C
-            </a>
-          </span>
-        </span>
-      </h2>
-      <ul className="details">
-        <li>{weatherData.precipitation}% precipitation</li>
-        <li>{weatherData.humidity}% humidity</li>
-        <li>
-          {weatherData.wind}
-          mph wind
-        </li>
-      </ul>
-      <div className="five-hour-forecast">5-Hour Forecast</div>
-      <div className="container">
-        <div className="row">
-          <div className="col-2">
-            <h4 className="forecast-time">10:00 AM</h4>
-            <ReactAnimatedWeather
-              className="forecast-icon"
-              icon="PARTLY_CLOUDY_DAY"
-              color="gray"
-              size={75}
-              animate={true}
-            />
-            <span className="temp">65°F </span>
-          </div>
-          <div className="col-2">
-            <h4 className="forecast-time">11:00 AM</h4>
-            <ReactAnimatedWeather
-              className="forecast-icon"
-              icon="WIND"
-              color="blue"
-              size={75}
-              animate={true}
-            />
-            <span className="temp">64°F</span>
-          </div>
-          <div className="col-2">
-            <h4 className="forecast-time">12:00 PM</h4>
-            <ReactAnimatedWeather
-              className="forecast-icon"
-              icon="WIND"
-              color="blue"
-              size={75}
-              animate={true}
-            />
-            <span className="temp">63°F</span>
-          </div>
-          <div className="col-2">
-            <h4 className="forecast-time">
-              1:00
-              <br />
-              PM
-            </h4>
-            <ReactAnimatedWeather
-              className="forecast-icon"
-              icon="PARTLY_CLOUDY_DAY"
-              color="gray"
-              size={75}
-              animate={true}
-            />
-            <span className="temp">64°F</span>
-          </div>
-          <div className="col-2">
-            <h4 className="forecast-time">
-              2:00
-              <br />
-              PM
-            </h4>
-            <ReactAnimatedWeather
-              className="forecast-icon"
-              icon="CLEAR_DAY"
-              color="yellow"
-              size={75}
-              animate={true}
-            />
-            <span className="temp">67°F</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast city={weatherData.city} />
+    );
+} else {
+  search();
+  return "Loading...";
+}
 }
