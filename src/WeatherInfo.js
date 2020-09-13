@@ -9,30 +9,27 @@ export default function WeatherInfo(props) {
       <h1>{props.data.city}</h1>
       <div className="subheader">
         <small>
-          <FormatDate 
-          date={props.data.date} 
-          time={props.data.time} />
-          </small>
-     <div className="subheader"
-     id="description">
-     {props.data.description}
-         </div>
-       <WeatherIcon code={props.data.icon}
-        className="icon"/>
+          <FormatDate date={props.data.date} time={props.data.time} />
+        </small>
+        <div className="subheader" id="description">
+          {props.data.description}
+        </div>
+        <WeatherIcon code={props.data.icon} className="icon" />
       </div>
       <h2>
-        <WeatherTemp fahrenheit={props.data.temperature}
-        className="temp-units"
+        <WeatherTemp
+          fahrenheit={props.data.temperature}
+          className="temp-units"
         />
-          <a href="/" className="far-temp">
-            °F
+        <a href="/" className="far-temp">
+          °F
+        </a>
+        <span className="pipe">|</span>
+        <span className="temp-units">
+          <a href="/" className="cels-temp">
+            °C
           </a>
-          <span className="pipe">|</span>
-          <span className="temp-units">
-            <a href="/" className="cels-temp">
-              °C
-            </a>
-          </span>
+        </span>
       </h2>
       <ul className="details">
         <li>{props.data.precipitation}% precipitation</li>
@@ -42,8 +39,6 @@ export default function WeatherInfo(props) {
           mph wind
         </li>
       </ul>
-      </div>
-    </div>
     </div>
   );
 }
