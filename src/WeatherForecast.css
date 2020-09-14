@@ -1,23 +1,25 @@
 .Weather .five-hour-forecast {
   font-family: "Fjalla One", sans-serif;
-  color: #16213e;
+  color: whitesmoke;
+  opacity: 75%;
   font-size: 40px;
   font-weight: 900;
   position: relative;
-  top: -200px;
+  top: -150px;
   left: 220px;
 }
 
 .Weather .container {
   display: block;
-  background: rgb(204, 222, 238);
+  background: ghostwhite;
+  opacity: 75%;
   width: 670px;
   height: 190px;
   padding-top: 20px;
   border-radius: 10px;
   margin: 0 auto;
   position: relative;
-  top: -200px;
+  top: -140px;
   text-align: center;
 }
 

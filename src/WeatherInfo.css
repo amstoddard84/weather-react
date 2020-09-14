@@ -2,7 +2,8 @@
   display: block;
   padding-top: 0;
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
-  color: #393b44;
+  color: whitesmoke;
+  opacity: 90%;
   font-weight: lighter;
   font-style: italic;
 }
@@ -14,35 +15,40 @@
   left: 550px;
   padding-top: 0;
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
-  color: #393b44;
+  color: whitesmoke;
+  opacity: 75%;
   font-weight: bold;
   font-style: italic;
 }
 
 .Weather .temp-units {
   font-size: 20px;
-  color: #16213e;
+  color: whitesmoke;
+  opacity: 75%;
   position: relative;
   left: -5px;
+  top: 60px;
 }
 
 .Weather .details {
   list-style: none;
   display: inline;
   position: relative;
-  top: -250px;
+  top: -185px;
   left: 300px;
   font-size: 14px;
-  color: #393b44;
+  color: whitesmoke;
+  opacity: 60%;
   margin: auto;
   font-weight: lighter;
   font-style: italic;
 }
 
-.WeatherInfo.info-icon {
+.info-icon {
   display: inline;
   position: relative;
-  top: -150px;
-  left: 525px;
+  opacity: 60%;
+  top: -110px;
+  left: 560px;
   padding: 35px 20px;
 }
