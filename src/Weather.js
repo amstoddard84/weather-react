@@ -36,6 +36,21 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function initialCity(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = `eaba586c718e9928d025519220f8eb35`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(<WeatherInfo />);
+    axios.get(apiUrl).then(<WeatherForecast />);
+  }
+
+  function currentCity() {
+    navigator.geolocation.getCurrentPosition(initialCity);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -49,8 +64,8 @@ export default function Weather(props) {
           />
           <input type="submit" className="form-button" value="Get Forecast" />
         </form>
-        <button type="button" className="button">
-          Current Location
+        <button type="submit" className="button" onClick={currentCity}>
+          ↺
         </button>
         <WeatherInfo data={weatherData} />
         <WeatherForecast city={weatherData.city} />
