@@ -29,7 +29,7 @@ export default function WeatherForecast(props) {
     );
   } else {
     let apiKey = "eaba586c718e9928d025519220f8eb35";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleForecastResponse);
 
     return null;
