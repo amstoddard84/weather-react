@@ -1,7 +1,8 @@
 .Weather .subheader {
   display: block;
   padding-top: 0;
-  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: whitesmoke;
   font-weight: lighter;
   font-style: italic;
@@ -13,7 +14,8 @@
   top: -10px;
   left: 550px;
   padding-top: 0;
-  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: whitesmoke;
 
   font-weight: bold;
@@ -37,7 +39,7 @@
   font-size: 14px;
   color: whitesmoke;
   margin: auto;
-  font-weight: lighter;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -45,6 +47,6 @@
   display: inline;
   position: relative;
   top: -110px;
-  left: 560px;
+  left: 530px;
   padding: 35px 20px;
 }

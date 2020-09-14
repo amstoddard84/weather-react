@@ -1,11 +1,12 @@
 .Weather .five-hour-forecast {
-  font-family: "Fjalla One", sans-serif;
+  font-family: "Merriweather", serif;
+  font-style: italic;
   color: whitesmoke;
   font-size: 40px;
   font-weight: 900;
   position: relative;
-  top: -150px;
-  left: 220px;
+  top: -140px;
+  left: 205px;
 }
 
 .Weather .container {
@@ -17,7 +18,7 @@
   border-radius: 10px;
   margin: 0 auto;
   position: relative;
-  top: -140px;
+  top: -125px;
   text-align: center;
 }
 
