@@ -3,7 +3,6 @@
   padding-top: 0;
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
   color: whitesmoke;
-  opacity: 90%;
   font-weight: lighter;
   font-style: italic;
 }
@@ -16,7 +15,7 @@
   padding-top: 0;
   font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
   color: whitesmoke;
-  opacity: 75%;
+
   font-weight: bold;
   font-style: italic;
 }
@@ -24,7 +23,6 @@
 .Weather .temp-units {
   font-size: 20px;
   color: whitesmoke;
-  opacity: 75%;
   position: relative;
   left: -5px;
   top: 60px;
@@ -38,7 +36,6 @@
   left: 300px;
   font-size: 14px;
   color: whitesmoke;
-  opacity: 60%;
   margin: auto;
   font-weight: lighter;
   font-style: italic;
@@ -47,7 +44,6 @@
 .info-icon {
   display: inline;
   position: relative;
-  opacity: 60%;
   top: -110px;
   left: 560px;
   padding: 35px 20px;
