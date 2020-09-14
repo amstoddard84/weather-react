@@ -50,3 +50,11 @@
   left: 530px;
   padding: 35px 20px;
 }
+
+a {
+  color: maroon;
+}
+
+a:hover {
+  color: #000000;
+}
