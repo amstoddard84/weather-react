@@ -23,7 +23,12 @@ export default function FormatDate(props) {
   }
   return (
     <div>
-      {day} {hours}:{minutes}
+      {day}{" "}
+      {props.date.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      })}
     </div>
   );
 }

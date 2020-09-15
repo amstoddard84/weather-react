@@ -5,8 +5,11 @@ import "./WeatherPreview.css";
 export default function WeatherPreview(props) {
   function hours() {
     let date = new Date(props.data.dt * 1000);
-    let hours = date.getHours();
-    return `${hours}:00`;
+    let hours = date.toLocaleString("en-US", {
+      hour: "numeric",
+      hour12: true,
+    });
+    return `${hours}`;
   }
 
   function temperature() {
