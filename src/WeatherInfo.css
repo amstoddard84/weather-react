@@ -12,7 +12,7 @@
   display: block;
   position: relative;
   top: -10px;
-  left: 550px;
+  left: 425px;
   padding-top: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -34,7 +34,7 @@
   display: inline;
   position: relative;
   top: -185px;
-  left: 300px;
+  left: 250px;
   font-size: 14px;
   color: whitesmoke;
   margin: auto;
@@ -46,7 +46,7 @@
   display: inline;
   position: relative;
   top: -110px;
-  left: 530px;
+  left: 425px;
   padding: 35px 20px;
 }
 
