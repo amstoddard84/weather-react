@@ -1,3 +1,14 @@
+@media (min-device-width: 600px) {
+  img[data-src-600px] {
+    content: attr(data-src-600px, url);
+  }
+}
+@media (min-device-width: 800px) {
+  img[data-src-800px] {
+    content: attr(data-src-800px, url);
+  }
+}
+
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
