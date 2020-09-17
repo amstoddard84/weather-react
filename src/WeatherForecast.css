@@ -5,20 +5,20 @@
   font-size: 40px;
   font-weight: 900;
   position: relative;
-  top: -100px;
-  left: 125px;
+  top: -120px;
+  left: 220px;
 }
 
 .Weather .container {
   display: block;
   background: ghostwhite;
-  width: 550px;
+  width: 670px;
   height: 170px;
   padding-top: 20px;
   border-radius: 10px;
   margin: 0 auto;
   position: relative;
-  top: -90px;
+  top: -100px;
   text-align: center;
 }
 
